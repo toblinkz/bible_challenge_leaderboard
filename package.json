@@ -1,0 +1,33 @@
+{
+  "name": "bg-leaderboard",
+  "version": "1.0.0",
+  "description": "Bible Game Leaderboard",
+  "main": "index.js",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gideon-Eyinade/bg-leaderboard.git"
+  },
+  "keywords": [
+    "Leaderboard"
+  ],
+  "author": "Gideom Eyinade",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gideon-Eyinade/bg-leaderboard/issues"
+  },
+  "homepage": "https://github.com/Gideon-Eyinade/bg-leaderboard#readme",
+  "dependencies": {
+    "nuxt": "^3.14.1592",
+    "vue-toastification": "^2.0.0-rc.5"
+  },
+  "devDependencies": {
+    "sass-embedded": "^1.83.0"
+  }
+}

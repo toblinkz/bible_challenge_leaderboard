@@ -1,0 +1,153 @@
+$primary-color: #42aaff;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root,
+html {
+  height: 100%;
+  width: 100%;
+  color: #333333;
+  font-size: 16px;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Karla", sans-serif;
+  font-size: 16px;
+  color: #333;
+  font-weight: 300;
+  background-color: #ffffff;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+p {
+  font-size: 0.9rem;
+}
+
+.form-input {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+}
+
+.form-input input {
+  display: flex;
+  padding: 18px 12px 18px 24px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+  font-weight: 400;
+  border-radius: 8px;
+  border: 0.6px solid #e8e6e6;
+  background: #fbfbfb;
+  transition: border-color 0.3s;
+  outline: none;
+}
+
+.password-input {
+  position: relative;
+}
+
+i.password-visibility {
+  height: 26px;
+  cursor: pointer;
+  fill: #0a2e65;
+  top: 20px;
+  width: 26px;
+  opacity: 1;
+  position: absolute;
+  right: 12px;
+}
+
+.submit-button {
+  display: flex;
+  gap: 8px;
+  padding: 16px 0px 17px 0px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2px;
+  background: #42aaff;
+  border: none;
+  color: #fff;
+  text-align: center;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.5px;
+  cursor: pointer;
+}
+
+.submit-button[disabled] {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+.form-input input:focus {
+  border: 1px solid #42aaff;
+}
+
+.pagination-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 12px;
+}
+
+.paginate-buttons {
+  height: 40px;
+  width: 40px;
+  border-radius: 20px;
+  cursor: pointer;
+  background-color: rgb(242, 242, 242);
+  border: 1px solid rgb(217, 217, 217);
+  color: #42aaff;
+}
+
+.paginate-buttons:hover {
+  background-color: #ffff;
+  transition: 0.4s ease-in;
+}
+
+.active-page {
+  background-color: #42aaff;
+  border: 1px solid #42aaff;
+  color: white;
+}
+
+.active-page:hover {
+  background-color: #2988c8;
+}
+
+label {
+  font-family: Satoshi;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: left;
+}
