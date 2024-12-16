@@ -4,20 +4,20 @@
 
     <!-- <SearchBar class="search-bar" /> -->
 
-    <div class="navbar-profile">
-      <!-- <img
+    <!-- <div class="navbar-profile">
+      <img
         src="https://res.cloudinary.com/dgdteyucq/image/upload/v1707955745/bible-game/navbar-icons/notification_nh4ujf.svg"
-      /> -->
+      />
 
       NLWC BBC Bible Game Leaderboard
 
-      <!-- <div class="profile">
+      <div class="profile">
         <img
           src="https://res.cloudinary.com/dgdteyucq/image/upload/v1707955746/bible-game/navbar-icons/avatar_i0lxup.svg"
           class="profile-image"
         />
-      </div> -->
-    </div>
+      </div>
+    </div> -->
   </div>
 </template>
 
@@ -26,15 +26,15 @@
 <style scoped>
 .dashboard-navbar-container {
   width: 100%;
-  padding: 16px 8px 16px 70px;
-  padding: 16px 7rem;
+  padding: 16px 0px;
+  /* padding: 16px 7rem; */
   display: flex;
-  justify-content: space-between;
   justify-content: center;
   align-items: center;
   position: fixed;
   z-index: 100;
   background: #0b79d1;
+  background: #ffffff;
 }
 
 .dashboard-navbar-container .search-bar {
@@ -49,6 +49,7 @@
   cursor: pointer;
   padding-left: 8rem;
   color: #ffffff;
+  color: #0b79d1;
   font-weight: 700;
   font-size: 28px;
 }

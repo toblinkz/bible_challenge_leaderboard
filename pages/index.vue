@@ -76,6 +76,7 @@ onMounted(() => {
   flex-direction: column;
   gap: 12px;
   padding-top: 4rem;
+  background: #0b79d1;
 }
 
 .header {
@@ -105,6 +106,7 @@ onMounted(() => {
 
 .header-primary--text p:first-child {
   color: #0b79d1;
+  color: #ffffff;
 }
 
 .header-primary--text p:nth-child(2) {
@@ -119,6 +121,7 @@ onMounted(() => {
   font-weight: 600;
   font-size: 16px;
   color: #000000bc;
+  color: #ffffff;
 }
 
 .body {

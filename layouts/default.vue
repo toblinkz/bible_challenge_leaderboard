@@ -36,7 +36,7 @@
 
 .dashboard-container--main {
   background: #f6f6f6;
-  padding: 52px 48px 24px;
+  padding: 52px 0px 24px;
   overflow: hidden;
 }
 </style>
