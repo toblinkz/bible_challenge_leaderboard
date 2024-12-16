@@ -29,13 +29,26 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { ref } from "@vue/runtime-dom";
+
+const isLoadingLeaderBoard = ref(false);
+
+const getLeaderBoard = async () => {
+  isLoadingLeaderBoard.value = true;
+  try {
+    // let response = (await fetchKeyMetrics()) as unknown as KeyMetrics;
+    isLoadingLeaderBoard.value = false;
+  } catch (e) {
+    isLoadingLeaderBoard.value = false;
+  }
+};
+</script>
 
 <style scoped>
 .score-card--container {
   display: flex;
   gap: 21px;
-  /* justify-content: space-between; */
   align-items: center;
   font-family: "Mikado", sans-serif;
   background: linear-gradient(193.12deg, #f9edbb -46.66%, #fbf7ac 109.69%);
