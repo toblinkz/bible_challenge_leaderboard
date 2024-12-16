@@ -48,7 +48,10 @@ const getScoreBoard = async () => {
   try {
     let response = (await getLeaderBoard()) as unknown as any;
     leaderBoard.value = response.data as unknown as any;
-  } catch (e) {}
+    isLoadingLeaderBoard.value = false;
+  } catch (e) {
+    isLoadingLeaderBoard.value = false;
+  }
 };
 
 let token = ref(
