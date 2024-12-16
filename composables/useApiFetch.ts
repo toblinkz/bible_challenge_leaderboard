@@ -1,64 +1,72 @@
-import { createFetch } from '@vueuse/core';
-import { request } from 'http'
+import { createFetch } from "@vueuse/core";
+import { useAuthStore } from "~/store/auth";
+import { useToast } from "vue-toastification";
+import { createPinia } from "pinia";
+import { createApp } from "vue";
+import App from "../app.vue";
 
+const route = useRoute();
+const toast = useToast();
 const config = useRuntimeConfig();
 const baseUrl = config.public.apiBaseUrl;
+const pinia = createPinia();
+const app = createApp(App);
+app.use(pinia);
+const authStore = useAuthStore();
 
 export const useApiFetch = createFetch({
-    baseUrl: baseUrl,
-    combination: 'overwrite',
-    options: {
-        beforeFetch({url, options, cancel}){
-        
-            if(options.method === 'POST' || options.method === 'PATCH'){
-                options.headers = {
-                    'Content-Type': 'application/json',
-                }
-            }
+  baseUrl: baseUrl,
+  combination: "overwrite",
+  options: {
+    beforeFetch({ url, options, cancel }) {
+      let token = localStorage.getItem("local");
+      if (options.method === "POST" || options.method === "PATCH") {
+        options.headers = {
+          "Content-Type": "application/json",
+        };
+      }
 
-            options.headers = {
-                'Content-Type': 'application/json',
-                
-                ...options.headers,
-            }
+      options.headers = {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
 
-            return { options}
-        },
+        ...options.headers,
+      };
 
-        onFetchError(error){
-            let status = error.response?.status;
-            let unauthorized = localStorage.getItem('unauthorized') || 'false';
-            if (status == 400) {
-                try {
-                    let errorData = JSON.parse(error.data);
-                    if(typeof errorData == "object"){
-                 
-                    }   
-                    
-                } catch(e){
-                   
-                }
-                
-            }
-            else if (status == 401){
-               
-            } 
-            else if(status == 500){
-       
-            }
-
-            return error
-            
-        }
+      return { options };
     },
-    fetchOptions: {
-        mode: 'cors'
-    }
-})
+
+    onFetchError(error) {
+      let status = error.response?.status;
+      let unauthorized = localStorage.getItem("unauthorized") || "false";
+      if (status == 400) {
+        try {
+          let errorData = JSON.parse(error.data);
+          if (typeof errorData == "object") {
+            toast.error(errorData.errors[0]);
+          }
+        } catch (e) {
+          toast.error(error.data);
+        }
+      } else if (status == 401 && authStore.L_I) {
+        toast.error("Unauthorized");
+        authStore.logout();
+        const redirectPath =
+          "/login?redirect=" + encodeURIComponent(route.path);
+        localStorage.setItem("/redirect_path", route.path);
+        navigateTo(redirectPath);
+      } else if (status == 500) {
+        toast.error("Sorry, An error occurred");
+      }
+
+      return error;
+    },
+  },
+  fetchOptions: {
+    mode: "cors",
+  },
+});
 
 export const parseDataFromApi = (data: any) => {
-    return JSON.parse(data.value || '[]') as unknown as object[]
-}
-
-
-
+  return JSON.parse(data.value || "[]") as unknown as object[];
+};

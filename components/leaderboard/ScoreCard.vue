@@ -1,14 +1,19 @@
 <template>
   <div class="score-card--container">
-    <div class="number">1</div>
+    <div class="number">{{ position }}</div>
 
     <div class="player">
-      <img src="~/assets/icons/general/leader.svg" class="leader" />
+      <!-- <img src="~/assets/icons/general/leader.svg" class="leader" /> -->
+
+      <img
+        :src="`https://api.multiavatar.com/${props.avatar}.svg?apikey=aUl0WdNmqyJus8/`"
+        class="avatar"
+      />
 
       <div class="player-section">
-        <p>Jesulademi</p>
+        <p>{{ name }}</p>
 
-        <div class="player-details">
+        <!-- <div class="player-details">
           <div class="player-detail">
             <img src="~/assets/icons/general/UK.svg" class="leader" />
             <p class="country">UKG</p>
@@ -18,44 +23,45 @@
             <img src="~/assets/icons/general/badge.svg" class="leader" />
             <p>Child</p>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
 
     <div class="coin">
       <img src="~/assets/icons/general/coin.svg" class="leader" />
-      1,000,000
+      {{ score }}
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from "@vue/runtime-dom";
+const props = defineProps<{
+  position: number;
+  avatar: number;
+  name: string;
+  score: number;
+}>();
 
-const isLoadingLeaderBoard = ref(false);
-
-const getLeaderBoard = async () => {
-  isLoadingLeaderBoard.value = true;
-  try {
-    // let response = (await fetchKeyMetrics()) as unknown as KeyMetrics;
-    isLoadingLeaderBoard.value = false;
-  } catch (e) {
-    isLoadingLeaderBoard.value = false;
-  }
-};
+// let avatarIcon = ref(1);
+// watch(avatarIcon, () => {
+//   props.avatar;
+// });
 </script>
 
 <style scoped>
 .score-card--container {
   display: flex;
   gap: 21px;
+  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   font-family: "Mikado", sans-serif;
   background: linear-gradient(193.12deg, #f9edbb -46.66%, #fbf7ac 109.69%);
   border: 1px solid #f4ffce;
   box-shadow: 0px 4px 4px 0px #00000040;
   border-radius: 6px;
-  padding: 16px 21px;
+  padding: 16px 28px;
+  width: 80%;
 }
 
 .number {
@@ -74,6 +80,11 @@ const getLeaderBoard = async () => {
   color: #ffffff;
 }
 
+.avatar {
+  width: 30px;
+  height: 30px;
+}
+
 .player {
   display: flex;
   gap: 12px;
@@ -83,6 +94,8 @@ const getLeaderBoard = async () => {
 .player-section {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 6px;
 }
 

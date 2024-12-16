@@ -41,7 +41,6 @@ const searchInputText = ref("");
   cursor: pointer;
   padding: 0px 24px 0px 42px;
   border-radius: 8px;
-  font-family: Satoshi;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;

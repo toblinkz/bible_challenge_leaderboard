@@ -50,6 +50,20 @@ export default defineNuxtConfig({
     },
   },
 
-  css: ["~/assets/styles/index.scss", "~/assets/fonts/satoshi/satoshi.css"],
+  css: ["~/assets/styles/index.scss"],
+
+  // modules: [
+  //   [
+  //     "@pinia/nuxt",
+
+  //     {
+  //       autoImports: ["defineStore", "acceptHMRUpdate"],
+  //     },
+  //   ],
+  //   "pinia",
+  // ],
+
+  modules: ["@pinia/nuxt"],
+
   compatibilityDate: "2024-12-14",
 });
