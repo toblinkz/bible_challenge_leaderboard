@@ -24,12 +24,7 @@
   </div>
 </template>
 
-<script setup lang="ts">
-let userRole = ref("");
-let userName = ref("");
-
-onMounted(() => {});
-</script>
+<script setup lang="ts"></script>
 
 <style scoped>
 .dashboard-navbar-container {
