@@ -9,7 +9,7 @@
         src="https://res.cloudinary.com/dgdteyucq/image/upload/v1707955745/bible-game/navbar-icons/notification_nh4ujf.svg"
       /> -->
 
-      NLWC Bible Boot Camp
+      NLWC BBC Bible Game Leaderboard
 
       <!-- <div class="profile">
         <img

@@ -6,7 +6,7 @@
           <p style="font-size: 24px; font-weight: 700; line-height: 120%">
             Challenge Leaderboard
           </p>
-          <p>Monitor the leader board</p>
+          <p>Monitor the leaderboard</p>
           <p>
             Check out those taking the lead; Not joined; Join the challenge to
             be a part of them
