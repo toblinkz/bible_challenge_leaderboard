@@ -135,7 +135,7 @@ onMounted(() => {
   padding: 2rem 1rem;
   /* margin: 2rem 10rem; */
   border-radius: 6px;
-  width: 35%;
+  width: 50%;
   /* height: 100vh; */
   background: #0b79d1;
 }
