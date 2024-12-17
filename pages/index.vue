@@ -65,7 +65,7 @@ onMounted(() => {
   getJwtBodyAndSetNeededData(token.value);
   setInterval(() => {
     getScoreBoard();
-  }, 5000);
+  }, 3000);
 });
 </script>
 
