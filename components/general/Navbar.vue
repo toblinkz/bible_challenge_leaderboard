@@ -34,7 +34,7 @@
   position: fixed;
   z-index: 100;
   background: #0b79d1;
-  background: #ffffff;
+  /* background: #ffffff; */
 }
 
 .dashboard-navbar-container .search-bar {

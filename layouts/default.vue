@@ -35,7 +35,7 @@
 }
 
 .dashboard-container--main {
-  background: #f6f6f6;
+  /* background: #f6f6f6; */
   padding: 52px 0px 24px;
   overflow: hidden;
 }

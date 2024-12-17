@@ -76,7 +76,7 @@ onMounted(() => {
   flex-direction: column;
   gap: 12px;
   padding-top: 4rem;
-  background: #0b79d1;
+  /* background: #0b79d1; */
 }
 
 .header {
@@ -106,7 +106,7 @@ onMounted(() => {
 
 .header-primary--text p:first-child {
   color: #0b79d1;
-  color: #ffffff;
+  /* color: #ffffff; */
 }
 
 .header-primary--text p:nth-child(2) {
@@ -120,8 +120,9 @@ onMounted(() => {
 .header-primary--text p:nth-child(3) {
   font-weight: 600;
   font-size: 16px;
-  color: #000000bc;
-  color: #ffffff;
+  color: #000000a1;
+  /* color: #ffffff; */
+  /* color: #0b79d1; */
 }
 
 .body {
@@ -130,11 +131,12 @@ onMounted(() => {
   flex-direction: column;
   gap: 18px;
   align-items: center;
-  justify-content: center;
-  padding: 2rem 7rem;
+  /* justify-content: center; */
+  padding: 2rem 1rem;
   /* margin: 2rem 10rem; */
-  border-radius: 4px;
-  width: 60%;
+  border-radius: 6px;
+  width: 35%;
+  /* height: 100vh; */
   background: #0b79d1;
 }
 
