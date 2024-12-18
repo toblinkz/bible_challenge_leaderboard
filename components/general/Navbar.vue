@@ -1,5 +1,6 @@
 <template>
   <div class="dashboard-navbar-container">
+
     <img src="~/assets/logos/Spirit_Game_Logo.png" class="logo" />
 
     <!-- <SearchBar class="search-bar" /> -->
