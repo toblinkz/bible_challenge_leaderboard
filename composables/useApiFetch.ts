@@ -8,7 +8,7 @@ import App from "../app.vue";
 const route = useRoute();
 const toast = useToast();
 const config = useRuntimeConfig();
-const baseUrl = config.public.apiBaseUrl;
+const baseUrl = 'https://plankton-app-ikxuv.ondigitalocean.app';
 const pinia = createPinia();
 const app = createApp(App);
 app.use(pinia);
