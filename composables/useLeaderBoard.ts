@@ -3,4 +3,5 @@ export const getLeaderBoard = async () => {
     "/playlog/campaigns/leaderboards?campaign=CAMPAIGN_GROWING_UP_TWO&limit=20"
   )) as unknown as any;
   return parseDataFromApi(response.data);
+  
 };
